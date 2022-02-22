@@ -3,6 +3,8 @@ Phine aims to be a lightweight PHP framework which is between a complex Laravel 
 
 Phine is just an object that provides you every functionality you need. It is designed to not to interrupt you in your coding process if you don't want it. You even don't need to use the Phine object itself, instead you can use most of the classes and traits without the context of Phine.
 
+So yey, it is PHP but it is fine = Phine
+
 ## Phine: Core
 The core of the object is split into different traits with own puposes:
 * **Core\Config\Config** - Provides all config variables
@@ -16,7 +18,7 @@ The core of the object is split into different traits with own puposes:
 * **Core\Error** - 
 * **Core\Handlers** - Manager for handlers
 * **Core\Incidents** - log routine, central management for log entries
-* **Core\Init** - Some traits needs an initialization process before you can use it. The init trait initializes everything that as needed at construction of Phine
+* **Core\Init** - Some traits needs an initialization process before you can use it. The init trait initializes everything that is needed at construction of Phine
 * **Core\Installer** - 
 * **Core\L10N** - Manages localization files and settings
 * **Core\Libraries** - Manager for default and dynamic libraries
