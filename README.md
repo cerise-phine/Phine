@@ -5,29 +5,29 @@ Phine is just an object that provides you every functionality you need. It is de
 
 ## Phine: Core
 The core of the object is split into different traits with own puposes:
-* Core\Config\Config - Provides all config variables
-* Core\Config\Defaults - Collection of default config variables
-* Core\Phinterfaces\Phinterface - Manages getter and setter of Phine to all it sub routines
-* Core\Assets - Resources are called "Assets", for example CSS files, favicon, etc.. Assets trait is a central manager for those resources
-* Core\Blueprints - 
-* Core\Bootstrap - Some predefined bootstrap processes to get a CMS or other functionalities
-* Core\Cache - 
-* Core\Debug - Some debug functionalities
-* Core\Error - 
-* Core\Handlers - Manager for handlers
-* Core\Incidents - log routine, central management for log entries
-* Core\Init - Some traits needs an initialization process before you can use it. The init trait initializes everything that as needed at construction of Phine
-* Core\Installer - 
-* Core\L10N - Manages localization files and settings
-* Core\Libraries - Manager for default and dynamic libraries
-* Core\Module - 
-* Core\Output - 
-* Core\Rights - 
-* Core\Route - Extracts route, endpoint, modus operandi and other variables from a given request
-* Core\Site - Manages everything Phine needs to build the actual requested route
-* Core\Sitemap - 
-* Core\Template - 
-* Core\User - 
+* **Core\Config\Config** - Provides all config variables
+* **Core\Config\Defaults** - Collection of default config variables
+* **Core\Phinterfaces\Phinterface** - Manages getter and setter of Phine to all it sub routines
+* **Core\Assets** - Resources are called "Assets", for example CSS files, favicon, etc.. Assets trait is a central manager for those resources
+* **Core\Blueprints** - 
+* **Core\Bootstrap** - Some predefined bootstrap processes to get a CMS or other functionalities
+* **Core\Cache** - 
+* **Core\Debug** - Some debug functionalities
+* **Core\Error** - 
+* **Core\Handlers** - Manager for handlers
+* **Core\Incidents** - log routine, central management for log entries
+* **Core\Init** - Some traits needs an initialization process before you can use it. The init trait initializes everything that as needed at construction of Phine
+* **Core\Installer** - 
+* **Core\L10N** - Manages localization files and settings
+* **Core\Libraries** - Manager for default and dynamic libraries
+* **Core\Module** - 
+* **Core\Output** - 
+* **Core\Rights** - 
+* **Core\Route** - Extracts route, endpoint, modus operandi and other variables from a given request
+* **Core\Site** - Manages everything Phine needs to build the actual requested route
+* **Core\Sitemap** - 
+* **Core\Template** - 
+* **Core\User** - 
 
 ## Phinterface
 From outside or while you developing modules for Phine, you often interact with the getter and setter of the Phine instance itself.
