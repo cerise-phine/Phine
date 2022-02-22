@@ -1,5 +1,5 @@
 # Phine
-**Work in progress - please keep in mind that until v1.0 phine is not fully operational**
+**Work in progress - please keep in mind that until v1.0 Phine is not fully operational**
 
 Phine aims to be a lightweight PHP framework which is between a complex Laravel and a full CMS like Wordpress. It can bootstrap into a complete CMS, but if you don't want or need it, you can use every single procedure by your own to compose your webplication like you need it.
 
