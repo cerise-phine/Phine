@@ -1,0 +1,26 @@
+# Error Document Handling
+ErrorDocument 301 /index.php?htfail=301
+ErrorDocument 302 /index.php?htfail=302
+ErrorDocument 400 /index.php?htfail=400
+ErrorDocument 401 /index.php?htfail=401
+ErrorDocument 402 /index.php?htfail=402
+ErrorDocument 403 /index.php?htfail=403
+ErrorDocument 404 /index.php?htfail=404
+ErrorDocument 405 /index.php?htfail=405
+ErrorDocument 408 /index.php?htfail=408
+ErrorDocument 415 /index.php?htfail=415
+ErrorDocument 500 /index.php?htfail=500
+ErrorDocument 501 /index.php?htfail=501
+ErrorDocument 502 /index.php?htfail=502
+ErrorDocument 503 /index.php?htfail=503
+ErrorDocument 504 /index.php?htfail=504
+ErrorDocument 505 /index.php?htfail=505
+
+# mod_rewrite
+RewriteEngine On
+
+RewriteBase /~cerise/Projects/phine/v0-3/public/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?R=$1 [QSA,L]
