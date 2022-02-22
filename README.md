@@ -8,7 +8,7 @@ Phine is just an object that provides you every functionality you need. It is de
 So yey, it is PHP but it is fine = Phine
 
 ## Phine: Core
-The core of the object is split into different traits with own puposes:
+The core of the object is split into different traits with own purposes:
 * **Core\Config\Config** - Provides all config variables
 * **Core\Config\Defaults** - Collection of default config variables
 * **Core\Phinterfaces\Phinterface** - Manages getter and setter of Phine to all it sub routines
