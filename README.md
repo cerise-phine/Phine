@@ -63,3 +63,6 @@ From outside or while you developing modules for Phine, you often interact with 
 
 ## Blueprints
 ... comes with v0.4
+
+## Misc
+* Sometimes I code live on twitch. You're invited to participate, send your feedbacks or thoughts or just cowork and chill together :) https://www.twitch.tv/cerise_phine
