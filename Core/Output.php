@@ -90,8 +90,12 @@ trait Output
                 echo $this->HTML->Tab . $this->HTML->open('body') . $this->HTML->Break(2);
             
                     echo $this->HTML->Tab(2) . $this->HTML->open('div', array('id' => 'PhineScrollWrapper')) . $this->HTML->Break;
-                        echo $this->HTML->Tab(3) . $this->HTML->open('div', array('id' => 'PhineContentWrapper')) . $this->HTML->Break(10);
+                        echo $this->HTML->Tab(3) . $this->HTML->open('div', array('id' => 'PhineContentWrapper')) . $this->HTML->Break(2);
 
+                        
+                        
+                        
+                        $this->printDebug($this);
                         
                         
                         

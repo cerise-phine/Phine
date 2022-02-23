@@ -32,7 +32,7 @@ trait Cache
     # 3.1 initCache
     private function initCache(): bool
     {
-        if($this->checkCacheDir())
+        if($this->checkCacheDirs())
         {
             return true;
         }
@@ -43,11 +43,11 @@ trait Cache
     }
     
     # 3.2 checkCacheDir
-    private function checkCacheDir(): bool
+    private function checkCacheDirs(): bool
     {
-        if(file_exists($this->Config['Cache']['Dir']))
+        if(file_exists($this->Config['Cache']['Private']) && file_exists($this->Config['Cache']['Public']))
         {
-            if(is_writeable($this->Config['Cache']['Dir']))
+            if(is_writeable($this->Config['Cache']['Private']) && is_writeable($this->Config['Cache']['Public']))
             {
                 return true;
             }
