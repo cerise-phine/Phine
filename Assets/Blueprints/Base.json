@@ -1,0 +1,47 @@
+{
+    "CSS":
+    {
+        
+    },
+    "HTML":
+    {
+        "html":
+        {
+            "language": "##LANGUAGE##",
+            "_contains":
+            {
+                "head":
+                {
+                    "_contains":
+                    {
+                        "title":
+                        {
+                            "_contains": "##TITLE##"
+                        },
+                        "0": "##META##",
+                        "1": "##HEADERCSS##",
+                        "2": "##HEADERJS##"
+                    }
+                },
+                "body":
+                {
+                    "_contains":
+                    {
+                        "div":
+                        {
+                            "id": "PhineScrollWrapper",
+                            "_contains":
+                            {
+                                "div":
+                                {
+                                    "id": "PhineContentWrapper",
+                                    "_contains": "##CONTENT##"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
