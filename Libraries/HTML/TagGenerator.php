@@ -35,7 +35,7 @@ class TagGenerator
     {
         $GeneratedTag                               = '';
         
-        if(isset($this->Tags[$Tag]))
+        if(isset($this->Tags[$Tag]) && !in_array('_single', $this->Tags[$Tag]))
         {
             switch($Type)
             {
@@ -44,10 +44,7 @@ class TagGenerator
 
                 case 'close':
                     return $this->generateCloseTag($Tag);
-
-                case 'single':
-                    return $this->generateSingleTag($Tag, $Attributes);
-
+                    
                 default:
                     if($Attributes !== false)
                     {
@@ -57,17 +54,19 @@ class TagGenerator
                                                         : ''
                                                     );
                         $GeneratedTag               .= $this->generateCloseTag($Tag);
-                        
                         return $GeneratedTag;
                     }
             }
+        }
+        elseif(isset($this->Tags[$Tag]) && in_array('_single', $this->Tags[$Tag]))
+        {
+            $GeneratedTag                           = $this->generateSingleTag($Tag, $Attributes);
+            return $GeneratedTag;
         }
         else
         {
             return false;
         }
-        
-        return $GeneratedTag;
     }
     
     # 2.3 open
@@ -88,7 +87,7 @@ class TagGenerator
         return $this->generateSingleTag($Tag, $Attributes);
     }
     
-    # 2.5 generateOpenTag
+    # 2.6 generateOpenTag
     public function generateOpenTag($Tag, $Attributes): string
     {
         $GeneratedOpenTag                           = '';
@@ -106,7 +105,7 @@ class TagGenerator
         return $GeneratedOpenTag;
     }
     
-    # 2.6 generateCloseTag
+    # 2.7 generateCloseTag
     public function generateCloseTag($Tag): string
     {
         $GeneratedCloseTag                          = '';
@@ -124,7 +123,7 @@ class TagGenerator
         return $GeneratedCloseTag;
     }
     
-    # 2.7 generateSingleTag
+    # 2.8 generateSingleTag
     public function generateSingleTag($Tag, $Attributes = false): string
     {
         $GeneratedSingleTag                         = '';
@@ -142,7 +141,7 @@ class TagGenerator
         return $GeneratedSingleTag;
     }
     
-    # 2.8 generateAttributes
+    # 2.9 generateAttributes
     public function generateAttributes($Tag, $Attributes): string
     {
         $GeneratedAttributes                        = '';

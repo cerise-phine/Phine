@@ -60,7 +60,20 @@ trait Output
     # 2.1 OutputAuto
     private function OutputAuto(): void
     {
-        $this->OutputHTML();
+        switch($this->ModusOperandi)
+        {
+            case self::MODUS_OPERANDI_HTML:
+                $this->OutputHTML();
+                break;
+                
+            case self::MODUS_OPERANDI_AJAX:
+                $this->OutputAJAX();
+                break;
+                
+            case self::MODUS_OPERANDI_API:
+                $this->OutputAPI();
+                break;
+        }
     }
     
     # 2.2 OutputHTML
@@ -69,13 +82,45 @@ trait Output
         # 2.2.1 If Bootstrap(HTML) was successful
         if($this->Bootstrap(self::MODUS_OPERANDI_HTML))
         {
-            $this->Cache('HTMLHeader');
-            
-            $this->Cache('HTMLFooter');
-            
-            
-            # 2.2.1.1 Open HTML
+            # 2.2.1.1 Output doctype
             echo $this->HTML->DocType . $this->HTML->Break;
+            
+            # 2.2.1.2 Prepare blueprint variables
+            /*
+            $Base                                   = array
+            (
+                'LANGUAGE'                              => $this->L10N('Language'),
+                'TITLE'                                 => $this->Site['Title'],
+                'META'                                  => $this->getSiteMetaHTML(),
+                'HEADERCSS'                             => '',
+                'HEADERJS'                              => '',
+                'CONTENT'                               => ''
+            );
+            */
+            
+            #$this->Blueprints->Base->Placeholder('TITLE', 'Wert');
+            #$this->Blueprints->Base->Placeholders($Base);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            #echo $this->getSiteMetaHTML();
+            
+            
+            
+            $this->printDebug($this->Blueprints->foo);
+            
+            
+            
+            
+            /*
             echo $this->HTML->open('html', array('language' => $this->L10N('Language'))) . $this->HTML->Break;
             
                 # 2.2.1.2 HTML Header
@@ -112,6 +157,15 @@ trait Output
                 
             # 2.2.1.4 Close HTML
             echo $this->HTML->close('html');
+             * 
+             */
+            
+            
+            
+            
+            
+            
+            
         }
         
         # 2.2.2 If Bootstrap(HTML) returned an error

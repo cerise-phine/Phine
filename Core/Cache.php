@@ -7,7 +7,7 @@ trait Cache
     private         $Cache                          = null;
     
     # 2 Public Methods
-    # 2.1 Error
+    # 2.1 Cache
     public function Cache($Var = false)
     {
         switch($Var)
@@ -27,6 +27,20 @@ trait Cache
                 return null;
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     # 3 Private methods
     # 3.1 initCache

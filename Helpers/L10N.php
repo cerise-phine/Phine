@@ -41,8 +41,8 @@ class L10N
         }
     }
     
-    # 3 Private methods
-    # 3.1 initVariables
+    # 4 Private methods
+    # 4.1 initVariables
     private function initVariables(): void
     {
         if(is_null($this->Variables))

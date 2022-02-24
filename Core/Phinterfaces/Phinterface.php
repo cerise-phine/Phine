@@ -125,12 +125,13 @@ trait Phinterface
             (is_string($Arguments) && !empty($Arguments))
         )
         {
-            return $Arguments;
+            #return $Arguments;
+            return true;
         }
         else
         {
             #$this->setIncident('Error', 'Argument check failed');
-            return null;
+            return false;
         }
     }
     

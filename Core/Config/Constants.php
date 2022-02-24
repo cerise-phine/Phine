@@ -15,9 +15,7 @@ class Constants
     const DIR_PHINE                                 = self::DIR_ROOT . 'Phine/';
     const DIR_PHINE_ASSETS                          = self::DIR_PHINE . 'Assets/';
     const DIR_PHINE_ASSET_BLUEPRINTS                = self::DIR_PHINE_ASSETS . 'Blueprints/';
-    const DIR_PHINE_ASSET_CSS                       = self::DIR_PHINE_ASSETS . 'CSS/';
-    const DIR_PHINE_ASSET_HTML                      = self::DIR_PHINE_ASSETS . 'HTML/';
-    const DIR_PHINE_ASSET_JavaScript                = self::DIR_PHINE_ASSETS . 'JavaScript/';
+    const DIR_PHINE_ASSET_JAVASCRIPT                = self::DIR_PHINE_ASSETS . 'JavaScript/';
     const DIR_PHINE_CORE                            = self::DIR_PHINE . 'Core/';
     const DIR_PHINE_HANDLERS                        = self::DIR_PHINE . 'Handlers/';
     const DIR_PHINE_HELPERS                         = self::DIR_PHINE . 'Helpers/';
@@ -26,7 +24,7 @@ class Constants
     const DIR_PHINE_MODELS                          = self::DIR_PHINE . 'Models/';
     
     const DIR_CUSTOM                                = self::DIR_ROOT . 'Custom/';
-    const DIR_CUSTOM_BLUEPRINT                      = self::DIR_CUSTOM . 'Blueprints/';
+    const DIR_CUSTOM_BLUEPRINTS                     = self::DIR_CUSTOM . 'Blueprints/';
     const DIR_CUSTOM_CACHE                          = self::DIR_CUSTOM . 'Cache/';
     const DIR_CUSTOM_CONFIGS                        = self::DIR_CUSTOM . 'Configs/';
     const DIR_CUSTOM_CONTENT                        = self::DIR_CUSTOM . 'Content/';
@@ -46,6 +44,10 @@ class Constants
     const NAMESPACE_DEFAULT_L10N                    = 'L10N\\';
     
     # 1.4 Constants for script
+    const TRAIT_RETURN_DEBUG                        = 'Debug';
+    const TRAIT_RETURN_PHINTERFACE                  = 'Phinterface';
+    const TRAIT_RETURN_INCIDENTS                    = 'Incidents';
+    
     const MODUS_OPERANDI_HTML                       = 'HTML';
     const MODUS_OPERANDI_AJAX                       = 'AJAX';
     const MODUS_OPERANDI_API                        = 'API';

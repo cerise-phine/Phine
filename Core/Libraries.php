@@ -15,8 +15,8 @@ trait Libraries
             case 'Debug':
                 return array
                 (
-                    'Libraries'                         => $this->Libraries,
-                    'DefaultLibraries'                  => $this->DefaultLibraries
+                    'Libraries'                     => $this->Libraries,
+                    'DefaultLibraries'              => $this->DefaultLibraries
                 );
                 
             case 'Phinterface':
@@ -30,8 +30,8 @@ trait Libraries
             case 'Incidents':
                 return array
                 (
-                    array('Error', '001'),
-                    array('Error', '002')
+                    array('Error',                  '001'),
+                    array('Error',                  '002')
                 );
                 
             default:

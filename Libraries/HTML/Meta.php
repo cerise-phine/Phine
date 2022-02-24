@@ -14,7 +14,7 @@ trait Meta
             $getMetaTag                             .= $this->Tab($Tabs);
         }
         
-        $getMetaTag                                 .= $this->single('meta', $Attributes);
+        $getMetaTag                                 .= $this->Tag('meta', $Attributes);
         
         $getMetaTag                                 .= $this->Break;
         

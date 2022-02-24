@@ -81,7 +81,7 @@ trait TagGeneratorVariables
                             '_contains', '_global', '_event'
                         ),
                         'br'                            => array(
-                            '_global', '_event'
+                            '_single', '_global', '_event'
                         ),
                         'button'                        => array(
                             '_contains', '_global', '_event', 'autofocus',
@@ -165,7 +165,9 @@ trait TagGeneratorVariables
                         ),
                         'head'                          => false,
                         'header'                        => array(),
-                        'hr'                            => array('align'),
+                        'hr'                            => array(
+                            '_single', 'align'
+                        ),
                         'html'                          => array(
                             '_contains', 'language'
                         ),
@@ -178,20 +180,20 @@ trait TagGeneratorVariables
                             'src', 'srcdoc', 'width'
                         ),
                         'img'                           => array(
-                            'align', 'alt', 'crossorigin', 'decoding', 'height',
-                            'importance', 'intrinsicsize', 'ismap', 'loading',
-                            'referrerpolicy', 'sizes', 'src', 'srcset',
-                            'usemap', 'width'
+                            '_single', 'align', 'alt', 'crossorigin',
+                            'decoding', 'height', 'importance', 'intrinsicsize',
+                            'ismap', 'loading', 'referrerpolicy', 'sizes',
+                            'src', 'srcset', 'usemap', 'width'
                         ),
                         'input'                         => array(
-                            'accept', 'alt', 'autocomplete', 'autofocus',
-                            'capture', 'checked', 'dirname', 'disabled', 'form',
-                            'formaction', 'formenctype', 'formmethod',
-                            'formnovalidate', 'formtarget', 'height', 'list',
-                            'max', 'maxlength', 'minlength', 'min', 'multiple',
-                            'name', 'pattern', 'placeholder', 'readonly',
-                            'required', 'size', 'src', 'step', 'type', 'usemap',
-                            'value', 'width'
+                            '_single', 'accept', 'alt', 'autocomplete',
+                            'autofocus', 'capture', 'checked', 'dirname',
+                            'disabled', 'form', 'formaction', 'formenctype',
+                            'formmethod', 'formnovalidate', 'formtarget',
+                            'height', 'list', 'max', 'maxlength', 'minlength',
+                            'min', 'multiple', 'name', 'pattern', 'placeholder',
+                            'readonly', 'required', 'size', 'src', 'step',
+                            'type', 'usemap', 'value', 'width'
                         ),
                         'ins'                           => array(
                             'cite', 'datetime'
@@ -205,9 +207,9 @@ trait TagGeneratorVariables
                         'legend'                        => array(),
                         'li'                            => array('value'),
                         'link'                          => array(
-                            'crossorigin', 'href', 'hreflang', 'importance',
-                            'integrity', 'media', 'referrerpolicy', 'rel',
-                            'sizes', 'type'
+                            '_single', 'crossorigin', 'href', 'hreflang',
+                            'importance', 'integrity', 'media',
+                            'referrerpolicy', 'rel', 'sizes', 'type'
                         ),
                         'main'                          => array(),
                         'map'                           => array('name'),
@@ -215,8 +217,8 @@ trait TagGeneratorVariables
                         'menu'                          => array('type'),
                         'menuitem'                      => array(),
                         'meta'                          => array(
-                            'charset', 'content', 'http-equiv', 'name', 
-                            'property'
+                            '_single', 'charset', 'content', 'http-equiv',
+                            'name', 'property'
                         ),
                         'meter'                         => array(
                             'form', 'high', 'low', 'max', 'min', 'optimum',

@@ -1,38 +1,80 @@
 <?php
-namespace Core;
+namespace Core\Phinterfaces;
 
-trait Blueprints
+class Blueprints extends \Core\Config\Constants
 {
     # 1 Variables
+    private static  $DebugMode                      = false;
+    private static  $Phinstance                     = false;
+    private         $Instances                      = null;
+    private         $DefaultBlueprints              = null;
+    private         $CustomBlueprints               = null;
     
-    
-    # 2 Public Methods
-    # 2.1 Blueprints
-    public function Blueprints($Var = false)
+    # 2 Magic Methods
+    # 2.1 __construct
+    final public function __construct($DefaultBlueprints, $DebugMode = false)#: void
     {
-        switch($Var)
+        if($DebugMode === true)
         {
-            case 'Debug':
-                return null;
-                
-            case 'Phinterface':
-                return array
-                (
-                    'DebugBlueprints'                       => array('Blueprints',  'Debug')
-                );
-                
-            case 'Incidents':
-                return null;
-                
-            default:
-                return null;
+            self::$DebugMode                        = true;
+        }
+        
+        $this->initBlueprints($DefaultBlueprints);
+    }
+    
+    # 2.2 __get
+    final public function __get($Blueprint): ?object
+    {
+        return $this->Blueprints($Blueprint);
+    }
+    
+    # 2.3 __set
+    final public function __set($Var, $Value): void
+    {
+        
+    }
+    
+    # 2.4 __debugInfo
+    final public function __debugInfo(): ?array
+    {
+        $Debug['DebugMode']                         = self::$DebugMode;
+        
+        $Debug['DefaultBlueprints']                 = $this->DefaultBlueprints;
+        $Debug['CustomBlueprints']                  = $this->CustomBlueprints;
+        
+        return $Debug;
+    }
+    
+    # 3 Public Methods
+    # 3.1 Blueprints
+    public function Blueprints($Blueprint): ?object
+    {
+        if($this->instanceBlueprint($Blueprint))
+        {
+            return $this->Instances[$Blueprint];
+        }
+        else
+        {
+            return null;
         }
     }
     
-    # 3 Private Methods
-    # 3.1 initBlueprint
-    private function initBlueprint(): bool
+    # 4 Private Methods
+    # 4.1 initBlueprints
+    private function initBlueprints($DefaultBlueprints): void
     {
+        $this->DefaultBlueprints                    = $DefaultBlueprints;
+        
+    }
+    
+    # 4.2 instanceBlueprint
+    private function instanceBlueprint($Blueprint): bool
+    {
+        
+        
+        
+        
+        
         return true;
     }
 }

@@ -142,4 +142,11 @@ trait Defaults
                         'EMail'                         => array('Libraries', 'EMail'),
                         'Files'                         => array('Libraries', 'Files')
                     );
+    
+    private         $DefaultBlueprints              = array
+                    (
+                        'Base',
+                        'DebugGUI',
+                        'AdminGUI'
+                    );
 }

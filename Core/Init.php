@@ -76,6 +76,7 @@ trait Init
         $this->initCache();
         $this->initRoute();
         $this->initSite();
+        $this->initBlueprints();
         $this->initL10N();
         $this->initSite();
         $this->initSitemap();
