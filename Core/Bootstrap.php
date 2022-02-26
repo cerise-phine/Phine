@@ -9,6 +9,31 @@ trait Bootstrap
     {
         switch($Mode)
         {
+            # 2.1.1 Phine output
+            case 'Debug':
+                return null;
+                
+            case 'Phinterface':
+                return array
+                (
+                    'BootstrapHTML'                 => array('Bootstrap', 'HTML'),
+                    'BootstrapAJAX'                 => array('Bootstrap', 'AJAX'),
+                    'BootstrapAPI'                  => array('Bootstrap', 'API'),
+                    'BootstrapCLI'                  => array('Bootstrap', 'CLI'),
+                    'DebugBootstrap'                => array('Bootstrap', 'Debug')
+                );
+                
+            case 'Incidents':
+                return array(
+                    array('Debug',          'x203001'),
+                    array('Error',          'x203002'),
+                    array('Error',          'x203003'),
+                    array('Error',          'x203004'),
+                    array('Error',          'x203005'),
+                    array('Error',          'x203006')
+                );
+                
+            # 2.1.2 Specific output
             case self::MODUS_OPERANDI_HTML:
                 return $this->initBootstrapHTML();
             
@@ -21,28 +46,8 @@ trait Bootstrap
             case self::MODUS_OPERANDI_CLI:
                 return $this->initBootstrapCLI();
                 
-            case 'Phinterface':
-                return array
-                (
-                    'BootstrapHTML'                 => array('Bootstrap', 'HTML'),
-                    'BootstrapAJAX'                 => array('Bootstrap', 'AJAX'),
-                    'BootstrapAPI'                  => array('Bootstrap', 'API'),
-                    'BootstrapCLI'                  => array('Bootstrap', 'CLI'),
-                    'DebugBootstrap'                => array('Bootstrap', 'Debug')
-                );
-                
-            case 'Debug':
-                return null;
-                
-            case 'Incidents':
-                return array(
-                    array('Debug',          'x203001'),
-                    array('Error',          'x203002'),
-                    array('Error',          'x203003'),
-                    array('Error',          'x203004'),
-                    array('Error',          'x203005'),
-                    array('Error',          'x203006')
-                );
+            case self::MODUS_OPERANDI_CRON:
+                return $this->initBootstrapCRON();
             
             default:
                 return null;
@@ -53,12 +58,6 @@ trait Bootstrap
     # 2.1 initBootstrapHTML
     private function initBootstrapHTML(): bool
     {
-        $IncidentID                                     = $this->setDebugLog('x203001');
-        
-        
-        
-        
-        $this->setIncidentStop($IncidentID);
         return true;
     }
     
@@ -76,6 +75,12 @@ trait Bootstrap
     
     # 2.4 initBootstrapCLI
     private function initBootstrapCLI(): bool
+    {
+        return true;
+    }
+    
+    # 2.5 initBootstrapCRON
+    private function initBootstrapCRON(): bool
     {
         return true;
     }

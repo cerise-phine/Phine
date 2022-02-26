@@ -70,11 +70,15 @@ class Blueprints extends \Core\Config\Constants
     # 4.2 instanceBlueprint
     private function instanceBlueprint($Blueprint): bool
     {
-        
-        
-        
-        
-        
-        return true;
+        if(in_array($Blueprint, $this->DefaultBlueprints))
+        {
+            $HelperClass                            = self::NAMESPACE_HELPERS . 'Blueprint';
+            $this->Instances[$Blueprint]            = new $HelperClass($Blueprint);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

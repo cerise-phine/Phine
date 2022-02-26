@@ -14,7 +14,7 @@ trait Assets
     {
         switch($Var)
         {
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'CSS'                           => $this->AssetsCSS,
@@ -22,7 +22,7 @@ trait Assets
                     'JavaScript'                    => $this->AssetsJavaScript
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array(
                     'AssetsCSS'                     => array('Assets', 'CSS'),
                     'AssetsFonts'                   => array('Assets', 'Fonts'),
@@ -30,7 +30,7 @@ trait Assets
                     'DebugAssets'                   => array('Assets', 'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
             case 'CSS':

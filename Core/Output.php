@@ -86,84 +86,13 @@ trait Output
             echo $this->HTML->DocType . $this->HTML->Break;
             
             # 2.2.1.2 Prepare blueprint variables
-            /*
-            $Base                                   = array
-            (
-                'LANGUAGE'                              => $this->L10N('Language'),
-                'TITLE'                                 => $this->Site['Title'],
-                'META'                                  => $this->getSiteMetaHTML(),
-                'HEADERCSS'                             => '',
-                'HEADERJS'                              => '',
-                'CONTENT'                               => ''
-            );
-            */
-            
-            #$this->Blueprints->Base->Placeholder('TITLE', 'Wert');
-            #$this->Blueprints->Base->Placeholders($Base);
+            echo $this->Blueprints->Base->HTML;
             
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            #echo $this->getSiteMetaHTML();
-            
-            
-            
-            $this->printDebug($this->Blueprints->foo);
-            
-            
-            
-            
-            /*
-            echo $this->HTML->open('html', array('language' => $this->L10N('Language'))) . $this->HTML->Break;
-            
-                # 2.2.1.2 HTML Header
-                echo $this->HTML->Tab . $this->HTML->open('head') . $this->HTML->Break;
-                
-                    echo $this->HTML->Tab(2) . $this->HTML->Tag('title', array('_contains' => $this->Site['Title'])) . $this->HTML->Break;
-                    echo $this->getSiteMetaHTML();
-                    
-                echo $this->HTML->Tab . $this->HTML->close('head') . $this->HTML->Break;
-            
-                # 2.2.1.3 HTML Body
-                echo $this->HTML->Tab . $this->HTML->open('body') . $this->HTML->Break(2);
-            
-                    echo $this->HTML->Tab(2) . $this->HTML->open('div', array('id' => 'PhineScrollWrapper')) . $this->HTML->Break;
-                        echo $this->HTML->Tab(3) . $this->HTML->open('div', array('id' => 'PhineContentWrapper')) . $this->HTML->Break(2);
-
-                        
-                        
-                        
-                        $this->printDebug($this);
-                        
-                        
-                        
-                        
-                        if(self::$DebugMode === true)
-                        {
-                            
-                        }
-                            
-                        echo $this->HTML->Tab(3) . $this->HTML->close('div') . $this->HTML->Break;
-                    echo $this->HTML->Tab(2) . $this->HTML->close('div') . $this->HTML->Break(2);
-            
-                echo $this->HTML->Tab . $this->HTML->close('body') . $this->HTML->Break;
-                
-            # 2.2.1.4 Close HTML
-            echo $this->HTML->close('html');
-             * 
-             */
-            
-            
-            
-            
-            
+            $this->printDebug($this->Blueprints->Base->Placeholders);
+            $this->printDebug($this->Blueprints->Base->BlueprintHTML);
             
             
         }

@@ -33,9 +33,13 @@ class TagGenerator
     # 2.2 Tag
     public function Tag($Tag, $Attributes = false, $Type = false): ?string
     {
-        $GeneratedTag                               = '';
+        $GeneratedTag                               = null;
         
-        if(isset($this->Tags[$Tag]) && !in_array('_single', $this->Tags[$Tag]))
+        if(
+            isset($this->Tags[$Tag])
+            && is_array($this->Tags[$Tag])
+            && !in_array('_single', $this->Tags[$Tag])
+        )
         {
             switch($Type)
             {
@@ -46,27 +50,26 @@ class TagGenerator
                     return $this->generateCloseTag($Tag);
                     
                 default:
-                    if($Attributes !== false)
-                    {
-                        $GeneratedTag               = $this->generateOpenTag($Tag, $Attributes);
-                        $GeneratedTag               .= (isset($Attributes['_contains'])
+                    $GeneratedTag                   = $this->generateOpenTag($Tag, $Attributes);
+                    $GeneratedTag                   .= (isset($Attributes['_contains'])
                                                         ? $Attributes['_contains']
                                                         : ''
                                                     );
-                        $GeneratedTag               .= $this->generateCloseTag($Tag);
-                        return $GeneratedTag;
-                    }
+                    $GeneratedTag                   .= $this->generateCloseTag($Tag);
+                    return $GeneratedTag;
             }
         }
-        elseif(isset($this->Tags[$Tag]) && in_array('_single', $this->Tags[$Tag]))
+        elseif(
+            isset($this->Tags[$Tag])
+            && is_array($this->Tags[$Tag])
+            && in_array('_single', $this->Tags[$Tag])
+        )
         {
             $GeneratedTag                           = $this->generateSingleTag($Tag, $Attributes);
             return $GeneratedTag;
         }
-        else
-        {
-            return false;
-        }
+        
+        return null;
     }
     
     # 2.3 open

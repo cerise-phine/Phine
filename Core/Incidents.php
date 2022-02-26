@@ -18,6 +18,7 @@ trait Incidents
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case 'Debug':
                 return array
                 (
@@ -52,6 +53,7 @@ trait Incidents
                     array('Error',                  'x207008')
                 );
                 
+            # 2.1.2 Specific output
             case 'all':
                 return $this->getIncidents('all');
                 

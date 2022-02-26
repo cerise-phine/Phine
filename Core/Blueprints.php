@@ -12,6 +12,7 @@ trait Blueprints
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
@@ -28,6 +29,7 @@ trait Blueprints
             case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
+            # 2.1.2 Specific output
             default:
                 return $this->Blueprints;
         }

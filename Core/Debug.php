@@ -12,6 +12,7 @@ trait Debug
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case 'Debug':
                 return array
                 (
@@ -34,6 +35,7 @@ trait Debug
                     array('Debug',          'x204002')
                 );
                 
+            # 2.1.2 Specific output
             case 'DebugMode':
                 return self::$DebugMode;
                 

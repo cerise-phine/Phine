@@ -9,6 +9,7 @@ trait Init
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case 'Debug':
                 return null;
                 
@@ -59,6 +60,7 @@ trait Init
                     array('Init', 'x208502')
                 );
                 
+            # 2.1.2 Specific output
             default:
                 return null;
         }

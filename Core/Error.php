@@ -9,6 +9,7 @@ trait Error
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case 'Debug':
                 return null;
                 
@@ -20,6 +21,7 @@ trait Error
             case 'Incidents':
                 return null;
                 
+            # 2.1.2 Specific output
             default:
                 return null;
         }

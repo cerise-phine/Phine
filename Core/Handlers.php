@@ -12,6 +12,7 @@ trait Handlers
     {
         switch($Handler)
         {
+            # 2.1.1 Phine output
             case 'Debug':
                 return array
                 (
@@ -29,6 +30,7 @@ trait Handlers
             case 'Incidents':
                 return null;
                 
+            # 2.1.2 Specific output
             default:
                 if(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers))
                 {
