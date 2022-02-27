@@ -82,19 +82,13 @@ trait Output
         # 2.2.1 If Bootstrap(HTML) was successful
         if($this->Bootstrap(self::MODUS_OPERANDI_HTML))
         {
-            # 2.2.1.1 Output doctype
-            echo $this->HTML->DocType . $this->HTML->Break;
+            $IncidentID                         = $this->setIncident('x213002');
             
-            # 2.2.1.2 Prepare blueprint variables
-            echo $this->Blueprints->Base->HTML;
+            echo $this->HTML->DocType;
+            echo $this->HTML->Break;
+            echo $this->Blueprints->Base->createHTML;
             
-            
-            
-            
-            $this->printDebug($this->Blueprints->Base->Placeholders);
-            $this->printDebug($this->Blueprints->Base->BlueprintHTML);
-            
-            
+            $this->setIncidentStop($IncidentID);
         }
         
         # 2.2.2 If Bootstrap(HTML) returned an error

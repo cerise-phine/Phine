@@ -303,7 +303,6 @@ trait Incidents
         }
         
         $this->Incidents                            = array();
-        $this->setDebugLog('x207007');
         return true;
     }
     

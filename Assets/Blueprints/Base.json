@@ -1,39 +1,57 @@
 {
+    "Blueprint": "Phine Base HTML",
+    "Version": "0.1",
+    "Author": "Phine",
     "CSS":
     {
         
     },
     "HTML":
     {
-        "html":
+        "HTMLTag":
         {
+            "_tag" : "html",
             "language": "##LANGUAGE##",
             "_contains":
             {
-                "head":
+                "HeadTag":
                 {
+                    "_tag": "head",
                     "_contains":
                     {
-                        "title":
+                        "TitleTag":
                         {
+                            "_tag": "title",
                             "_contains": "##TITLE##"
                         },
-                        "0": "##META##",
-                        "1": "##HEADERCSS##",
-                        "2": "##HEADERJS##"
+                        "MetaPlaceholder": 
+                        {
+                            "_contains": "##META##"
+                        },
+                        "HeaderCSSPlaceholder":
+                        {
+                            "_contains": "##HEADERCSS##"
+                        },
+                        "HeaderJSPlaceholder":
+                        {
+                            "_contains": "##HEADERJS##"
+                        }
                     }
                 },
-                "body":
+                "BodyTag":
                 {
+                    "_tag": "body",
                     "_contains":
                     {
-                        "div":
+                        "PhineScrollWrapper":
                         {
+                            "_tag": "div",
                             "id": "PhineScrollWrapper",
                             "_contains":
                             {
-                                "div":
+                                "PhineContentWrapper":
                                 {
+                                    "_tag": "div",
                                     "id": "PhineContentWrapper",
                                     "_contains": "##CONTENT##"
                                 }

@@ -41,6 +41,7 @@ class Blueprints extends \Core\Config\Constants
         
         $Debug['DefaultBlueprints']                 = $this->DefaultBlueprints;
         $Debug['CustomBlueprints']                  = $this->CustomBlueprints;
+        $Debug['Instances']                         = $this->Instances;
         
         return $Debug;
     }
@@ -70,15 +71,47 @@ class Blueprints extends \Core\Config\Constants
     # 4.2 instanceBlueprint
     private function instanceBlueprint($Blueprint): bool
     {
-        if(in_array($Blueprint, $this->DefaultBlueprints))
+        if(isset($this->Instances[$Blueprint]) && is_object($this->Instances[$Blueprint]))
         {
-            $HelperClass                            = self::NAMESPACE_HELPERS . 'Blueprint';
-            $this->Instances[$Blueprint]            = new $HelperClass($Blueprint);
             return true;
         }
         else
         {
-            return false;
+            $BlueprintFile                          = $this->getBlueprintFile($Blueprint);
+            if(is_string($BlueprintFile))
+            {
+                $HelperClass                        = self::NAMESPACE_HELPERS . 'Blueprint\\Blueprint';
+                $this->Instances[$Blueprint]        = new $HelperClass($BlueprintFile);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    
+    # 4.3 getBlueprintFile
+    private function getBlueprintFile($Blueprint): ?string
+    {
+        if(is_string($Blueprint) && in_array($Blueprint, $this->DefaultBlueprints))
+        {
+            $BlueprintFile                              = $this->Constants('DirRoot');
+            $BlueprintFile                              .= self::DIR_PHINE_ASSET_BLUEPRINTS;
+            $BlueprintFile                              .= $Blueprint . '.json';
+            
+            if(file_exists($BlueprintFile))
+            {
+                return $BlueprintFile;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return null;
         }
     }
 }

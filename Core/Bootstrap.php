@@ -58,6 +58,40 @@ trait Bootstrap
     # 2.1 initBootstrapHTML
     private function initBootstrapHTML(): bool
     {
+        $IncidentID                                 = $this->setIncident('x203001');
+        
+        $Meta                                       = '';
+        $HeaderCSS                                  = '';
+        $HeaderJS                                   = '';
+        $Content                                    = $this->HTML->Break . 'blaba';
+
+        # 2.2.1.x Admin GUI
+        if($this->UserAccessLevel === self::ACCESS_LEVEL_ADMIN)
+        {
+            $this->Blueprints->AdminGUI->setTabBase(4);
+            #$Content                               .= $this->Blueprints->AdminGUI->createHTML;
+        }
+        
+        # 2.2.1.x Debug GUI
+        if(self::$DebugMode === true)
+        {
+            $this->Blueprints->DebugGUI->setTabBase(4);
+            #$Content                               .= $this->Blueprints->DebugGUI->createHTML;
+        }
+        
+        # 2.2.1.x Set base HTML
+        $this->Blueprints->Base->setPlaceholders(array
+        (
+            array('LANGUAGE',                       $this->Language),
+            array('TITLE',                          $this->Site['Title']),
+            array('META',                           $Meta),
+            array('HEADERCSS',                      $HeaderCSS),
+            array('HEADERJS',                       $HeaderJS),
+            array('CONTENT',                        $Content . $this->HTML->Break)
+        ));
+        
+        $this->setIncidentStop($IncidentID);
+        
         return true;
     }
     

@@ -1,0 +1,25 @@
+{
+    "Blueprint": "Phine Debug GUI",
+    "Version": "0.1",
+    "Author": "Phine",
+    "CSS":
+    {
+        
+    },
+    "HTML":
+    {
+        "PhineDebugGUI":
+        {
+            "_tag" : "div",
+            "id": "PhineDebugGUI",
+            "_contains":
+            {
+                "PhineDebugHeader":
+                {
+                    "_tag": "h3",
+                    "_contains": "Phine Debug GUI"
+                }
+            }
+        }
+    }
+}
