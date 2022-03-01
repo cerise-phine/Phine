@@ -132,7 +132,6 @@ trait Defaults
     private         $DefaultLibraries               = array
                     (
                         'CSS'                           => array('Libraries', 'CSS'),
-                        'Cache'                         => array('Libraries', 'Cache'),
                         'HTML'                          => array('Libraries', 'HTML'),
                         'JavaScript'                    => array('Libraries', 'JavaScript'),
                         'Validations'                   => array('Libraries', 'Validations'),

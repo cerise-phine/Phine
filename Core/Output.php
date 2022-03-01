@@ -87,6 +87,8 @@ trait Output
             echo $this->HTML->DocType;
             echo $this->HTML->Break;
             echo $this->Blueprints->Base->createHTML;
+           
+            echo $this->printDebug($this->Phinterface);
             
             $this->setIncidentStop($IncidentID);
         }

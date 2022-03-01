@@ -19,6 +19,7 @@ trait L10N
             case 'Phinterface':
                 $Phinterface['L10N']                = array('L10N', 'L10N');
                 $Phinterface['Language']            = array('L10N', 'Language');
+                $Phinterface['DebugL10N']           = array('L10N', 'Debug');
                 
                 return $Phinterface;
                 
