@@ -1,14 +1,13 @@
 <?php
 namespace Libraries\HTML;
 
-class HTML extends TagGenerator
+class HTML extends Generator
 {
     # 1 Traits
     use Forms;
     use Links;
     use Lists;
     use Meta;
-    use PhineGUI;
     use Tables;
     
     # 2 Variables and constants

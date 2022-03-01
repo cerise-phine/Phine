@@ -1,10 +1,10 @@
 <?php
-namespace Libraries\HTML;
+namespace Libraries\CSS;
 
-class TagGenerator
+class Generator
 {
     # 1 Traits
-    use TagGeneratorVariables;
+    use GeneratorVariables;
     
     # 2 Public methods
     # 2.1 Generator

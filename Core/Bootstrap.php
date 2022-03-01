@@ -64,6 +64,15 @@ trait Bootstrap
         $HeaderCSS                                  = '';
         $HeaderJS                                   = '';
         $Content                                    = $this->HTML->Break . 'blaba';
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         # 2.2.1.x Admin GUI
         if($this->UserAccessLevel === self::ACCESS_LEVEL_ADMIN)

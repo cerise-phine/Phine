@@ -1,7 +1,7 @@
 <?php
 namespace Libraries\HTML;
 
-trait TagGeneratorVariables
+trait GeneratorVariables
 {
     # 1 Variables
     private         $GlobalAttributes               = array(
