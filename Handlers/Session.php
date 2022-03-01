@@ -16,26 +16,6 @@ class Session
     # 2.2 __get
     final public function __get($Var)#: mixed
     {
-        return $this->getSession($Var);
-    }
-    
-    # 2.3 __set
-    final public function __set($Var, $Value): ?string
-    {
-        $this->setSession($Var, $Value);
-    }
-    
-    # 2.4 __debugInfo
-    final public function __debugInfo(): ?array
-    {
-        $DebugOutput                                = $this->Session;
-        
-        return $DebugOutput;
-    }
-    
-    # 2.5 getSession
-    public function getSession($Var)#: mixed
-    {
         if(isset($this->Session[$Var]) && isset($_SESSION[$Var]))
         {
             return $this->Session[$Var];
@@ -46,19 +26,29 @@ class Session
         }
     }
     
-    # 2.6 setSession
-    public function setSession($Var, $Value): void
+    # 2.3 __set
+    final public function __set($Var, $Value): void
     {
         $this->Session[$Var]                        = $Value;
         $_SESSION[$Var]                             = $Value;
     }
     
-    # 2.7 delSession
-    public function delSession($Var): void
+    # 2.4 __debugInfo
+    final public function __debugInfo(): ?array
+    {
+        $DebugOutput                                = $this->Session;
+        
+        return $DebugOutput;
+    }
+    
+    # 3 Public methods
+    # 3.1 unset
+    public function unset($Var): void
     {
         if($Var === 'all')
         {
             $this->Session                          = null;
+            unset($_SESSION);
         }
         else
         {

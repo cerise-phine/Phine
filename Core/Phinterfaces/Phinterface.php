@@ -73,14 +73,14 @@ trait Phinterface
     }
     
     # 2.3 setPhinterface
-    public function setPhinterface($Identifier, $Values): void
+    public function setPhinterface($Identifier, $SetValues): void
     {
-        if($this->checkPhinterfaceSet($Identifier, $Values))
+        if($this->checkPhinterfaceSet($Identifier))
         {
             $Phinterface                            = $this->Phinterface[$Identifier];
             $Call                                   = $this->checkPhinterfaceCall($Phinterface);
-            $this->getDebug($Values);
-            #call_user_func(array($this, $this->Phinterface[$Call]), $Values);
+            
+            call_user_func_array(array($this, $this->Phinterface[$Call]), array($Phinterface[1], $SetValues));
         }
     }
     
@@ -136,7 +136,7 @@ trait Phinterface
     }
     
     # 2.6 checkPhinterfaceSet
-    public function checkPhinterfaceSet($Identifier, $Value): bool
+    public function checkPhinterfaceSet($Identifier): bool
     {
         if(isset($this->Phinterface[$Identifier]) && isset($this->Phinterface[$Identifier][2]))
         {

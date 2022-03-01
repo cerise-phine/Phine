@@ -119,7 +119,6 @@ trait Defaults
                     (
                         'Client'                        => array('Handlers', 'Client'),
                         'Cookies'                       => array('Handlers', 'Cookies', true),
-                        'Data'                          => array('Handlers', 'Data'),
                         'ENV'                           => array('Handlers', 'ENV'),
                         'Get'                           => array('Handlers', 'Get'),
                         'HTTP'                          => array('Handlers', 'HTTP'),

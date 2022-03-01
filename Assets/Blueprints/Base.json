@@ -4,7 +4,79 @@
     "Author": "Phine",
     "CSS":
     {
-        
+        "CSSReset_Rule1":
+        {
+            "_selectors":
+            [
+                "html", "body", "div", "span", "applet", "object", "iframe",
+                "h1", "h2", "h3", "h4", "h5", "h6", "p", "blockquote", "pre",
+                "a", "abbr", "acronym", "address", "big", "cite", "code", "del",
+                "dfn", "em", "img", "ins", "kbd", "q", "s", "samp", "small",
+                "strike", "strong", "sub", "sup", "tt", "var", "b", "u", "i",
+                "center", "dl", "dt", "dd", "ol", "ul", "li", "fieldset",
+                "form", "label", "legend", "table", "caption", "tbody", "tfoot",
+                "thead", "tr", "th", "td", "article", "aside", "canvas",
+                "defaults", "embed", "figure", "figcaption", "footer", "header",
+                "hgroup", "menu", "nav", "output", "ruby", "section", "summary",
+                "time", "mark", "audio", "video"
+            ],
+            "margin": "0",
+            "padding": "0",
+            "border": "0",
+            "font-size": "100%",
+            "font": "inherit",
+            "vertical-align": "baseline"
+        },
+        "CSSReset_Rule2":
+        {
+            "_selectors":
+            [
+                "article", "aside", "details", "figcaption", "figure", "footer",
+                "header", "hgroup", "menu", "nav", "section"
+            ],
+            "display": "block"
+        },
+        "CSSReset_Rule3":
+        {
+            "_selectors": ["html", "body"],
+            "width": "100vw",
+            "height": "100vh",
+            "overflow": "hidden"
+        },
+        "CSSReset_Rule4":
+        {
+            "_selectors": ["body"],
+            "line-height": "1"
+        },
+        "CSSReset_Rule5":
+        {
+            "_selectors": ["ol", "ul"],
+            "list-style": "none"
+        },
+        "CSSReset_Rule6":
+        {
+            "_selectors": ["blockquote", "q"],
+            "quotes": "none"
+        },
+        "CSSReset_Rule7":
+        {
+            "_selectors":
+            [
+                "blockquote:before", "blockquote:after", "q;before", "q:after"
+            ],
+            "content": ""
+        },
+        "CSSReset_Rule8":
+        {
+            "_selectors": ["table"],
+            "border-collapse": "collapse",
+            "border-spacing": "0"
+        },
+        "CSSReset_Rule9":
+        {
+            "_selectors": ["*"],
+            "box-sizing": "border-box"
+        }
     },
     "HTML":
     {

@@ -36,9 +36,20 @@ class Handlers extends \Core\Config\Constants
     }
     
     # 2.3 __set
-    final public function __set($Var, $Value): void
+    final public function __set($Handler, $Values): void
     {
+        if(!is_array($Values) || (!isset($Values[0]) && !isset($Values[1])))
+        {
+            return;
+        }
         
+        if(isset($this->Handlers[$Handler]) && $this->instanceHandler($Handler))
+        {
+            $HandlerObject                          = $this->$Handler;
+            $Property                               = $Values[0];
+            $Value                                  = $Values[1];
+            $HandlerObject->$Property               = $Value;
+        }
     }
     
     # 2.4 __debugInfo

@@ -8,7 +8,7 @@ trait Handlers
     
     # 2 Public methods
     # 2.1 Handlers
-    public function Handlers($Handler = false, $Value = false)
+    public function Handlers($Handler = false, $Value = false)#: mixed
     {
         switch($Handler)
         {
@@ -32,7 +32,12 @@ trait Handlers
                 
             # 2.1.2 Specific output
             default:
-                if(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers))
+                if(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers) && $Value !== false)
+                {
+                    $this->Handlers->$Handler = $Value;
+                    return null;
+                }
+                elseif(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers) && $Value === false)
                 {
                     return call_user_func_array(array($this->Handlers,'Handlers'), array($Handler));
                 }

@@ -1,7 +1,7 @@
 <?php
 namespace Libraries\CSS;
 
-class CSS
+class CSS extends Generator
 {
     # 1 Traits
     
@@ -38,17 +38,7 @@ class CSS
     {
         switch($Var)
         {
-            case 'SiteTitle':
-                $this->SiteTitle                = $Value;
-                break;
-               
-            case 'Language':
-                $this->Language                 = $Value;
-                break;
-                
-            case 'CharSet':
-                $this->CharSet                  = $Value;
-                break;
+            
         }
     }
     
