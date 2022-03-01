@@ -12,6 +12,12 @@ From outside or while you developing modules for Phine, you often interact with 
 
 ### Phine / Phinterface
 * $Phine->**Phinterface** - Returns array with all phinterfaces
+* $Phine->**Constants** - Returns array with all Phine constants
+* $Phine->**DirRoot** - Returns string of the absolute parent folder of Phine
+* $Phine->**DirPhine** - Returns string of the absolute pather of Phine
+* $Phine->**DirCustom** - Returns string of the absolute path of "custom"
+* $Phine->**DirPublic** - Returns string of the absolute path of "public"
+
 
 * **$Phine** - Returns debug output with information about classes / traits
 * $Phine->**Debug** - Returns complete debug output
