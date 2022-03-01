@@ -13,8 +13,8 @@ From outside or while you developing modules for Phine, you often interact with 
 ### Phine / Phinterface
 * $Phine->**Phinterface** - Returns array with all phinterfaces
 * $Phine->**Constants** - Returns array with all Phine constants
-* $Phine->**DirRoot** - Returns string of the absolute parent folder of Phine
-* $Phine->**DirPhine** - Returns string of the absolute pather of Phine
+* $Phine->**DirRoot** - Returns string of the absolute parent path of Phine
+* $Phine->**DirPhine** - Returns string of the absolute path of Phine
 * $Phine->**DirCustom** - Returns string of the absolute path of "custom"
 * $Phine->**DirPublic** - Returns string of the absolute path of "public"
 
@@ -69,6 +69,7 @@ From outside or while you developing modules for Phine, you often interact with 
 * $Phine->**Post** - Returns object for post manager
 * $Phine->**Server**
 * $Phine->**Session** -  Returns object for session manager
+* $Phine->**Session = array($SessionKey, $SessionValue)** - Set session variable
 * $Phine->**Uploads**
 
 * $Phine->**Handlers** - Returns information about handlers
