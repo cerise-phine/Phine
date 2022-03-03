@@ -1,5 +1,5 @@
 <?php
-namespace Core\Phinterfaces;
+namespace Core;
 
 trait Phinterface
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Phine\Handlers;
+namespace Handlers;
 
 class HTTP
 {

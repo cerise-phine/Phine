@@ -8,7 +8,8 @@ spl_autoload_register(function($ClassName) {
 
 try
 {
-    $Phine                                          = Phine::Phinstance(true);
+    $PhineDebugMode                                 = (isset($PhineDebug) ? true : false);
+    $Phine                                          = Phine::Phinstance($PhineDebugMode);
 }
 catch (Exception $e)
 {

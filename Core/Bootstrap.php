@@ -63,17 +63,8 @@ trait Bootstrap
         $Meta                                       = '';
         $HeaderCSS                                  = '';
         $HeaderJS                                   = '';
-        $Content                                    = $this->HTML->Break . 'blaba';
+        $Content                                    = $this->HTML->Break;
         
-        
-        
-        
-        
-        
-        
-        
-        
-
         # 2.2.1.x Admin GUI
         if($this->UserAccessLevel === self::ACCESS_LEVEL_ADMIN)
         {

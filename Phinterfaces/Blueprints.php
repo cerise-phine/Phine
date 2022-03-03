@@ -1,7 +1,7 @@
 <?php
-namespace Core\Phinterfaces;
+namespace Phinterfaces;
 
-class Blueprints extends \Core\Config\Constants
+class Blueprints extends \Config\Constants
 {
     # 1 Variables
     private static  $DebugMode                      = false;

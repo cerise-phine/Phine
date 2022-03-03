@@ -1,9 +1,9 @@
 <?php
-class Phine extends Core\Config\Constants
+class Phine extends Config\Constants
 {
     # 1 Traits
-    use Core\Config\Config;
-    use Core\Phinterfaces\Phinterface;
+    use Core\Config;
+    use Core\Phinterface;
     use Core\Assets;
     use Core\Blueprints;
     use Core\Bootstrap;

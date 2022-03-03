@@ -1,10 +1,10 @@
 <?php
-namespace Core\Config;
+namespace Core;
 
 trait Config
 {
     # 1 Traits
-    use Defaults;
+    use \Config\Defaults;
     
     # 2 Constants and variables
     private         $ConfigSystem                   = null;

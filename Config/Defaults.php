@@ -1,5 +1,5 @@
 <?php
-namespace Core\Config;
+namespace Config;
 
 trait Defaults
 {

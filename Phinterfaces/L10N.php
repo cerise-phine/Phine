@@ -1,7 +1,7 @@
 <?php
-namespace Core\Phinterfaces;
+namespace Phinterfaces;
 
-class L10N extends \Core\Config\Constants
+class L10N extends \Config\Constants
 {
     # 1 Constants and variables
     private         $Language                       = null;

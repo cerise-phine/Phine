@@ -1,7 +1,7 @@
 <?php
-namespace Core\Phinterfaces;
+namespace Phinterfaces;
 
-class Libraries extends \Core\Config\Constants
+class Libraries extends \Config\Constants
 {
     # 1 Constants and variables
     private         $DynamicNamespace               = self::NAMESPACE_DYNAMIC_LIBRARIES;

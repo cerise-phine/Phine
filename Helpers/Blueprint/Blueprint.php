@@ -1,7 +1,7 @@
 <?php
 namespace Helpers\Blueprint;
 
-class Blueprint extends \Core\Config\Constants
+class Blueprint extends \Config\Constants
 {
     # 1 Traits
     use HTML;

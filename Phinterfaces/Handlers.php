@@ -1,7 +1,7 @@
 <?php
-namespace Core\Phinterfaces;
+namespace Phinterfaces;
 
-class Handlers extends \Core\Config\Constants
+class Handlers extends \Config\Constants
 {
     # 1 Variables
     private         $Instances                      = array();

@@ -1,5 +1,5 @@
 <?php
-namespace Core\Config;
+namespace Config;
 
 class Constants
 {
@@ -16,8 +16,8 @@ class Constants
     const DIR_PHINE_ASSET_BLUEPRINTS                = self::DIR_PHINE_ASSETS . 'Blueprints/';
     const DIR_PHINE_ASSET_JAVASCRIPT                = self::DIR_PHINE_ASSETS . 'JavaScript/';
     const DIR_PHINE_CORE                            = self::DIR_PHINE . 'Core/';
-    const DIR_PHINE_CORE_CONFIG                     = self::DIR_PHINE_CORE . 'Config/';
-    const DIR_PHINE_CORE_PHINTERFACES               = self::DIR_PHINE_CORE . 'Phinterfaces/';
+    const DIR_PHINE_CORE_CONFIG                     = self::DIR_PHINE . 'Config/';
+    const DIR_PHINE_CORE_PHINTERFACES               = self::DIR_PHINE . 'Phinterfaces/';
     const DIR_PHINE_HANDLERS                        = self::DIR_PHINE . 'Handlers/';
     const DIR_PHINE_HELPERS                         = self::DIR_PHINE . 'Helpers/';
     const DIR_PHINE_L10N                            = self::DIR_PHINE . 'L10N/';
@@ -38,7 +38,7 @@ class Constants
     const DIR_PUBLIC_CONTENT                        = self::DIR_PUBLIC . 'content/';
     
     # 1.3 Constants for namespaces
-    const NAMESPACE_PHINTERFACES                    = 'Core\\Phinterfaces\\';
+    const NAMESPACE_PHINTERFACES                    = 'Phinterfaces\\';
     const NAMESPACE_HANDLERS                        = 'Handlers\\';
     const NAMESPACE_DEFAULT_LIBRARIES               = 'Libraries\\';
     const NAMESPACE_DYNAMIC_LIBRARIES               = '';

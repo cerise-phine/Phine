@@ -11,7 +11,8 @@ trait Module
                         'ID'                            => false,
                         'Assets'                        => array
                         (
-                            
+                            'Controller'                    => false,
+                            'View'                          => false
                         )
                     );
     
