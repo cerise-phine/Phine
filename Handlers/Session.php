@@ -64,8 +64,8 @@ class Session
         }
     }
     
-    # 3 Private methods
-    # 3.1 initSession
+    # 4 Private methods
+    # 4.1 initSession
     private function initSession(): void
     {
         session_start();

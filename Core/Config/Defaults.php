@@ -18,7 +18,8 @@ trait Defaults
                             'UseCLI'                        => true,
                             'UseRepos'                      => true,
                             'UseCache'                      => true,
-                            'Template'                      => false
+                            'Template'                      => false,
+                            'CookieLifetime'                => 60 * 60 * 24 * 30
                         ),
         
                         'Repositories'                  => array
