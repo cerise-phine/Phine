@@ -10,26 +10,23 @@ trait Sitemap
     # 2.1 Sitemap
     public function Sitemap($Var)
     {
-        if(is_null($this->Sitemap) && !$this->initSitemap())
-        {
-            return null;
-        }
-        
         switch($Var)
         {
-            case 'Debug':
+            # 2.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return $this->Sitemap;
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
                     'Sitemap'                       => array('Sitemap', 'all'),
                     'DebugSitemap'                  => array('Sitemap', 'Debug')
                 );
                 
-            case 'Incidents':
+           case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
+            # 2.1.2 Specific output
             case 'all':
                 return $this->Sitemap;
                 

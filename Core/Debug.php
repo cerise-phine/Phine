@@ -4,7 +4,13 @@ namespace Core;
 trait Debug
 {
     # 1 Constants and variables
-    private         $DebugReports                   = null;
+    private         $DebugReports                   = array
+                    (
+                        'Core'                          => null,
+                        'Handlers'                      => null,
+                        'Libraries'                     => null,
+                        'Modules'                       => null
+                    ); 
     
     # 2 Public Methods
     # 2.1 Debug
@@ -13,31 +19,37 @@ trait Debug
         switch($Var)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
-                    'DebugMode'                         => self::$DebugMode,
-                    'Reports'                           => $this->DebugReports,
-                    
+                    'DebugMode'                     => self::$DebugMode,
+                    'Reports'                       => $this->DebugReports
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
-                    'Debug'                             => array('Debug',       'all'),
-                    'DebugMode'                         => array('Debug',       'DebugMode'),
-                    'DebugConstants'                    => array('Constants',   'Debug')
+                    'Debug'                         => array('Debug',       'all'),
+                    'DebugMode'                     => array('Debug',       'DebugMode'),
+                    'DebugConstants'                => array('Constants',   'Debug'),
+                    'PhineInfo'                     => array('Debug',       'PhineInfo'),
+                    'Info'                          => array('Debug',       'PhineInfo')
                 );
                 
-            case 'Incidents':
-                return array(
-                    array('Debug',          'x204001'),
-                    array('Debug',          'x204002')
+            case self::TRAIT_RETURN_INCIDENTS:
+                return array
+                (
+                    array('Debug',                  'x204001'),
+                    array('Debug',                  'x204002')
                 );
                 
             # 2.1.2 Specific output
             case 'DebugMode':
                 return self::$DebugMode;
+                
+            case 'PhineInfo':
+            case 'Info':
+                return $this->PhineInfo();
                 
             case 'all':
                 return $this->getDebugReports();
@@ -53,6 +65,15 @@ trait Debug
                 }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     # 2.2 getDebugReport
     public function getDebugReport($Report)#: ?array
@@ -127,15 +148,15 @@ trait Debug
     # 2.6 PhineInfo
     public function PhineInfo(): array
     {
-        $PhineInfo                                  = array();
         $PhineReflectionClass                       = new \ReflectionClass(__CLASS__);
         
         # 2.6.1 Info about Phine
-        $PhineInfo['Phine']                         = array(
+        $PhineInfo                                  = array(
             'Version'                                   => self::VERSION,
             'Traits'                                    => count($PhineReflectionClass->getTraitNames()),
             'Constants'                                 => count($this->Constants),
             'Properties'                                => count($PhineReflectionClass->getProperties()),
+            'Methods'                                   => count($PhineReflectionClass->getMethods()),
             'Phinterfaces'                              => $this->Phinterface('Debug')['PhinterfaceCount'],
             'Handlers'                                  => count($this->DefaultHandlers),
             'Libraries'                                 => count($this->DefaultLibraries)
@@ -152,12 +173,12 @@ trait Debug
                 
                 foreach($TraitReflectionClass->getMethods() AS $Method)
                 {
-                    $PhineInfo['Phine']['Core'][$TraitName]['Methods'][] = $Method->name;
+                    $PhineInfo['Core'][$TraitName]['Methods'][] = $Method->name;
                 }
                 
                 foreach($TraitReflectionClass->getProperties() AS $Property)
                 {
-                    $PhineInfo['Phine']['Core'][$TraitName]['Properties'][] = $Property->name;
+                    $PhineInfo['Core'][$TraitName]['Properties'][] = $Property->name;
                 }
                 
                 if(is_array($this->$TraitName('Phinterface')))
@@ -166,11 +187,11 @@ trait Debug
                     {
                         if(is_array($Call))
                         {
-                            $PhineInfo['Phine']['Core'][$TraitName]['Phinterface'][$Phinterface] = $Call[0] . '(' . $Call[1] . ')';
+                            $PhineInfo['Core'][$TraitName]['Phinterface'][$Phinterface] = $Call[0] . '(' . $Call[1] . ')';
                         }
                         else
                         {
-                            $PhineInfo['Phine']['Core'][$TraitName]['Phinterface'][$Phinterface] = $Call . '()';
+                            $PhineInfo['Core'][$TraitName]['Phinterface'][$Phinterface] = $Call . '()';
                         }
                     }
                 }
@@ -185,6 +206,16 @@ trait Debug
         
         return $PhineInfo;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     # 3 Private Methods
     # 3.1 initDebug
@@ -211,6 +242,10 @@ trait Debug
             
             # add more Debug output
             $initDebug['Constants']                     = 'Constants';
+            
+            
+            
+            
             
             
             $this->DebugReports                         = $initDebug;

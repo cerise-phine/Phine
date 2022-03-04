@@ -18,11 +18,12 @@ From outside or while you developing modules for Phine, you often interact with 
 * $Phine->**DirCustom** - Returns string of the absolute path of "custom"
 * $Phine->**DirPublic** - Returns string of the absolute path of "public"
 
-
 * **$Phine** - Returns debug output with information about classes / traits
 * $Phine->**Debug** - Returns complete debug output
 * $Phine->**DebugMode** - Returns bool debug mode var
 * $Phine->**DebugConstants** - Returns array with all Phine constants
+* $Phine->**Info** - Alias for $Phine->PhineInfo
+* $Phine->**PhineInfo** - 
 
 ### Configurations
 * $Phine->**Config** - Returns array with complete actual system configuration

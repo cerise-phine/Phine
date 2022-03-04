@@ -19,14 +19,14 @@ trait Incidents
         switch($Var)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'IncidentTypes'                 => $this->IncidentsTypes,
                     'Incidents'                     => $this->Incidents
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
                     'Incidents'                     => array('Incidents', 'all'),
@@ -40,7 +40,7 @@ trait Incidents
                     'DebugIncidents'                => array('Incidents', 'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array(
                     array('Notice',                 'x104001'),
                     array('Incidents',              'x207001'),

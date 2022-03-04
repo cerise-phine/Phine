@@ -13,19 +13,26 @@ trait L10N
     {
         switch($Var)
         {
-            case 'Debug':
-                return $this->L10N;
+            # 2.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
+                return array
+                (
+                    'Language'                      => $this->Language,
+                    'L10N'                          => $this->L10N
+                );
                 
-            case 'Phinterface':
-                $Phinterface['L10N']                = array('L10N', 'L10N');
-                $Phinterface['Language']            = array('L10N', 'Language');
-                $Phinterface['DebugL10N']           = array('L10N', 'Debug');
+            case self::TRAIT_RETURN_PHINTERFACE:
+                return array
+                (
+                    'Language'                      => array('L10N', 'Language'),
+                    'L10N'                          => array('L10N', 'L10N'),
+                    'DebugL10N'                     => array('L10N', 'Debug')
+                );
                 
-                return $Phinterface;
-                
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
+            # 2.1.2 Specific output
             case 'Language':
                 return $this->Language;
                 

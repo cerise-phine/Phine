@@ -8,7 +8,7 @@ trait Blueprints
     
     # 2 Public Methods
     # 2.1 Blueprints
-    public function Blueprints($Var = false)
+    public function Blueprints($Var = false)#: ?mixed
     {
         switch($Var)
         {

@@ -7,19 +7,20 @@ trait Libraries
     private         $Libraries                      = null;
 
     # 2 Public Methods
-    # 2.1 __get method
+    # 2.1 Libraries
     public function Libraries($Library = false)
     {
         switch($Library)
         {
-            case 'Debug':
+            # 2.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'Libraries'                     => $this->Libraries,
                     'DefaultLibraries'              => $this->DefaultLibraries
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 $Phinterface                        = $this->DefaultLibraries;
                 $Phinterface['Libs']                = 'Libraries';
                 $Phinterface['Libraries']           = 'Libraries';
@@ -27,13 +28,14 @@ trait Libraries
                 
                 return $Phinterface;
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array
                 (
                     array('Error',                  '001'),
                     array('Error',                  '002')
                 );
                 
+            # 2.1.2 Specific output
             default:
                 if(isset($this->DefaultLibraries[$Library]) && is_object($this->Libraries))
                 {
@@ -50,8 +52,8 @@ trait Libraries
     # 3.1 initLibraries
     private function initLibraries(): bool
     {
-        $LibrariesClass                             = self::NAMESPACE_PHINTERFACES . 'Libraries';
-        $this->Libraries                            = new $LibrariesClass(self::$DebugMode);
+        $LibrariesPhinterface                       = self::NAMESPACE_PHINTERFACES . 'Libraries';
+        $this->Libraries                            = new $LibrariesPhinterface(self::$DebugMode);
         
         return true;
     }

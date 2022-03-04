@@ -43,6 +43,8 @@ class Constants
     const NAMESPACE_DEFAULT_LIBRARIES               = 'Libraries\\';
     const NAMESPACE_DYNAMIC_LIBRARIES               = '';
     const NAMESPACE_HELPERS                         = 'Helpers\\';
+    const NAMESPACE_DEFAULT_MODULES                 = 'Assets\\Modules\\';
+    const NAMESPACE_DYNAMIC_MODULES                 = '';
     const NAMESPACE_DEFAULT_L10N                    = 'L10N\\';
     
     # 1.4 Constants for script

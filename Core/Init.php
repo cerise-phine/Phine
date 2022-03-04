@@ -10,13 +10,13 @@ trait Init
         switch($Var)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return null;
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return null;
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array(
                     array('Init', 'x208001'),
                     array('Init', 'x208002'),
@@ -68,22 +68,19 @@ trait Init
     
     # 2 Private Methods
     # 2.1 init
-    private function initPhine(): bool
+    private function initPhine(): void
     {
         $this->initConfig();
-        $this->initPhinterface();
         $this->initDebug();
+        $this->initPhinterface();
         $this->initHandlers();
         $this->initLibraries();
+        $this->initUser();
+        $this->initL10N();
         $this->initCache();
         $this->initRoute();
-        $this->initSite();
         $this->initBlueprints();
-        $this->initL10N();
-        $this->initSite();
         $this->initSitemap();
-        $this->initUser();
-        
-        return true;
+        $this->initSite();
     }
 }

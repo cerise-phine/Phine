@@ -12,10 +12,12 @@ trait Route
 
     # 2 Public methods
     # 2.1 Route
-    public function Route($Var = false)
+    public function Route($Var = false)#: ?mixed
     {
-        switch($Var) {
-            case 'Debug':
+        switch($Var)
+        {
+            # 2.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return array(
                     'Route'                         => $this->Route,
                     'RouteString'                   => $this->RouteString,
@@ -24,7 +26,7 @@ trait Route
                     'ModusOperandi'                 => $this->RouteModusOperandi
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
                     'RequestString'                 => array('Route', 'RequestString'),
@@ -36,9 +38,10 @@ trait Route
                     'DebugRoute'                    => array('Route', 'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
+            # 2.1.2 Specific output
             case 'Route':
                 return $this->Route;
                 

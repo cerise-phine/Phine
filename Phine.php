@@ -16,7 +16,7 @@ class Phine extends Config\Constants
     use Core\Installer;
     use Core\L10N;
     use Core\Libraries;
-    use Core\Module;
+    use Core\Modules;
     use Core\Output;
     use Core\Rights;
     use Core\Route;

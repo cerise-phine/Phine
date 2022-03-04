@@ -25,7 +25,7 @@ trait Site
         switch($Var)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'Site'                          => $this->Site,
@@ -33,7 +33,7 @@ trait Site
                     'SiteAssets'                    => $this->SiteAssets
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
                     'Site'                          => array('Site', 'Site'),
@@ -42,7 +42,7 @@ trait Site
                     'DebugSite'                     => array('Site', 'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array(
                     array('Debug',                  'x216001')
                 );

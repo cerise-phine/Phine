@@ -13,15 +13,15 @@ trait Cache
         switch($Var)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return null;
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array(
-                    'DebugCache'                            => array('Cache',       'Debug')
+                    'DebugCache'                    => array('Cache', 'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
             # 2.1.2 Specific output
@@ -29,20 +29,6 @@ trait Cache
                 return null;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     # 3 Private methods
     # 3.1 initCache

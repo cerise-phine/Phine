@@ -9,27 +9,29 @@ trait Output
     {
         switch($Mode)
         {
-            case 'Debug':
+            # 1.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return null;
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array
                 (
-                    'Output'                    => array('Output', 'Auto'),
-                    'OutputAuto'                => array('Output', 'Auto'),
-                    'OutputHTML'                => array('Output', self::MODUS_OPERANDI_HTML),
-                    'OutputAJAX'                => array('Output', self::MODUS_OPERANDI_AJAX),
-                    'OutputAPI'                 => array('Output', self::MODUS_OPERANDI_API),
-                    'OutputCLI'                 => array('Output', self::MODUS_OPERANDI_CLI),
-                    'DebugOutput'               => array('Output', 'Debug'),
+                    'Output'                        => array('Output', 'Auto'),
+                    'OutputAuto'                    => array('Output', 'Auto'),
+                    'OutputHTML'                    => array('Output', self::MODUS_OPERANDI_HTML),
+                    'OutputAJAX'                    => array('Output', self::MODUS_OPERANDI_AJAX),
+                    'OutputAPI'                     => array('Output', self::MODUS_OPERANDI_API),
+                    'OutputCLI'                     => array('Output', self::MODUS_OPERANDI_CLI),
+                    'DebugOutput'                   => array('Output', 'Debug'),
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array(
-                    array('Notice',         'x213001'),
-                    array('Debug',          'x213002')
+                    array('Notice',                 'x213001'),
+                    array('Debug',                  'x213002')
                 );
                 
+            # 1.1.2 Specific output
             case 'Auto':
                 return $this->OutputAuto();
             

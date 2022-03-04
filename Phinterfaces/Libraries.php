@@ -7,7 +7,8 @@ class Libraries extends \Config\Constants
     private         $DynamicNamespace               = self::NAMESPACE_DYNAMIC_LIBRARIES;
     private         $DefaultNamespace               = self::NAMESPACE_DEFAULT_LIBRARIES;
     private         $Dynamic                        = array();
-    private         $Default                        = array(
+    private         $Default                        = array
+                    (
                         'CSS'                           => 'CSS\\CSS',
                         'HTML'                          => 'HTML\\HTML',
                         'JavaScript'                    => 'JavaScript\\JavaScript',

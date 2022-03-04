@@ -46,6 +46,11 @@ trait Defaults
                         )
                     );
     
+    private         $DefaultDebugReports            = array
+                    (
+                        'Constants'
+                    );
+    
     private         $DefaultSites                   = array
                     (
                         'index'                         => array

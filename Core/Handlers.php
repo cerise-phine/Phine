@@ -13,21 +13,21 @@ trait Handlers
         switch($Handler)
         {
             # 2.1.1 Phine output
-            case 'Debug':
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'Handlers'                          => $this->Handlers,
                     'Defaults'                          => $this->DefaultHandlers
                 );
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 $Phinterface                        = $this->DefaultHandlers;
                 $Phinterface['Handlers']            = 'Handlers';
                 $Phinterface['DebugHandlers']       = array('Handlers', 'Debug');
                 
                 return $Phinterface;
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
             # 2.1.2 Specific output

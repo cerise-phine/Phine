@@ -10,42 +10,48 @@ trait Phinterface
     # 2.1 Phinterface
     public function Phinterface($Phinterface = false, $Set = false)#: mixed
     {
-        if($Phinterface === 'Debug')
+        switch($Phinterface)
         {
-            if(self::$DebugMode === true)
-            {
+            # 2.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
-                    'PhinterfaceCount'              => count($this->Phinterface),
-                    'Phinterfaces'                  => $this->Phinterface
+                    
                 );
-            }
-            else
-            {
+                
+            case self::TRAIT_RETURN_PHINTERFACE:
+                return array
+                (
+                    'Blueprints'                    => 'Blueprints'
+                );
+                
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
-            }
-        }
-        elseif($Phinterface === 'all')
-        {
-            return array_keys($this->Phinterface);
-        }
-        elseif(is_string($Phinterface) && $Set === false)
-        {
-            return (isset($this->Phinterface[$Phinterface]) ? true : false);
-        }
-        elseif(
-            is_string($Phinterface) && $Set === true
-            && (
-                isset($this->Phinterface[$Phinterface])
-                && isset($this->Phinterface[$Phinterface][2])
-                && $this->Phinterface[$Phinterface][2] === true
-            )
-        ) {
-            return true;
-        }
-        else
-        {
-            return null;
+         
+            # 2.1.2 Specific output
+            default:
+                if(is_string($Phinterface) && $Set === false)
+                {
+                    return (isset($this->Phinterface[$Phinterface]) ? true : false);
+                }
+                
+                
+                
+                elseif(
+                    is_string($Phinterface) && $Set === true
+                    && (
+                        isset($this->Phinterface[$Phinterface])
+                        && isset($this->Phinterface[$Phinterface][2])
+                        && $this->Phinterface[$Phinterface][2] === true
+                    )
+                )
+                {
+                    return true;
+                }
+                else
+                {
+                    return null;
+                }
         }
     }
     

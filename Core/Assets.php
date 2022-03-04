@@ -14,6 +14,7 @@ trait Assets
     {
         switch($Var)
         {
+            # 2.1.1 Phine output
             case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
@@ -33,6 +34,7 @@ trait Assets
             case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
+            # 2.1.2 Specific output
             case 'CSS':
                 return $this->AssetsCSS;
                 

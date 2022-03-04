@@ -9,19 +9,19 @@ trait Error
     {
         switch($Var)
         {
-            # 2.1.1 Phine output
-            case 'Debug':
+            # 1.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return null;
                 
-            case 'Phinterface':
+            case self::TRAIT_RETURN_PHINTERFACE:
                 return array(
                     'DebugError'                            => array('Error',       'Debug')
                 );
                 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return null;
                 
-            # 2.1.2 Specific output
+            # 1.1.2 Specific output
             default:
                 return null;
         }

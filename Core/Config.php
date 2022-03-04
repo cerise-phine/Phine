@@ -20,21 +20,8 @@ trait Config
     {
         switch($Var)
         {
-            case 'Phinterface':
-                return array
-                (
-                    'Config'                        => array('Config', 'all'),
-                    'ConfigSystem'                  => array('Config', 'System'),
-                    'ConfigRepositories'            => array('Config', 'Repositories'),
-                    'ConfigSecurity'                => array('Config', 'Security'),
-                    'ConfigCache'                   => array('Config', 'Cache'),
-                    'ConfigDatabase'                => array('Config', 'Database'),
-                    'ConfigEMail'                   => array('Config', 'EMail'),
-                    'ConfigDefaults'                => array('Config', 'Defaults'),
-                    'DebugConfig'                   => array('Config', 'Debug'),
-                );
-
-            case 'Debug':
+            # 3.1.1 Phine output
+            case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
                     'init'                          => (!is_null($this->Config) ? true : false),
@@ -48,12 +35,27 @@ trait Config
                     ),
                     'Config'                        => (self::$DebugMode === true ? $this->Config : null)
                 );
+                
+            case self::TRAIT_RETURN_PHINTERFACE:
+                return array
+                (
+                    'Config'                        => array('Config', 'all'),
+                    'ConfigSystem'                  => array('Config', 'System'),
+                    'ConfigRepositories'            => array('Config', 'Repositories'),
+                    'ConfigSecurity'                => array('Config', 'Security'),
+                    'ConfigCache'                   => array('Config', 'Cache'),
+                    'ConfigDatabase'                => array('Config', 'Database'),
+                    'ConfigEMail'                   => array('Config', 'EMail'),
+                    'ConfigDefaults'                => array('Config', 'Defaults'),
+                    'DebugConfig'                   => array('Config', 'Debug'),
+                );
 
-            case 'Incidents':
+            case self::TRAIT_RETURN_INCIDENTS:
                 return array(
                     array('Debug',                  'x201001')
                 );
                 
+            # 3.1.2 Specific output
             case 'System':
                 return (is_array($this->ConfigSystem) ? $this->ConfigSystem : null);
                 
