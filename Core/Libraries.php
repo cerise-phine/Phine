@@ -16,12 +16,11 @@ trait Libraries
             case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
-                    'Libraries'                     => $this->Libraries,
-                    'DefaultLibraries'              => $this->DefaultLibraries
+                    'Libraries'                     => $this->Libraries
                 );
                 
             case self::TRAIT_RETURN_PHINTERFACE:
-                $Phinterface                        = $this->DefaultLibraries;
+                $Phinterface                        = \Config\Defaults\Libraries::$Phinterfaces;
                 $Phinterface['Libs']                = 'Libraries';
                 $Phinterface['Libraries']           = 'Libraries';
                 $Phinterface['DebugLibraries']      = array('Libraries', 'Debug');
@@ -37,7 +36,7 @@ trait Libraries
                 
             # 2.1.2 Specific output
             default:
-                if(isset($this->DefaultLibraries[$Library]) && is_object($this->Libraries))
+                if(isset(\Config\Defaults\Libraries::$Phinterfaces[$Library]) && is_object($this->Libraries))
                 {
                     return call_user_func_array(array($this->Libraries,'Libraries'), array($Library));
                 }

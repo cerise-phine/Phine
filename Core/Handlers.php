@@ -16,8 +16,7 @@ trait Handlers
             case self::TRAIT_RETURN_DEBUG:
                 return array
                 (
-                    'Handlers'                          => $this->Handlers,
-                    'Defaults'                          => $this->DefaultHandlers
+                    'Handlers'                          => $this->Handlers
                 );
                 
             case self::TRAIT_RETURN_PHINTERFACE:

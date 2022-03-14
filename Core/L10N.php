@@ -57,7 +57,7 @@ trait L10N
         if(is_null($this->L10N))
         {
             # 2.1.1 Set default language from config
-            $this->Language                         = $this->ConfigSystem['Language'];
+            $this->Language                         = $this->Config->System;
 
             # 2.1.2 Overwrite defaults from user settings
 

@@ -4,20 +4,22 @@ namespace Phinterfaces;
 class Blueprints extends \Config\Constants
 {
     # 1 Variables
-    private static  $DebugMode                      = false;
+    # 1.1 Variables for Phinterface
+    public  static  $Phinterphace                   = array
+                                                    (
+                                                        
+                                                    );
     private static  $Phinstance                     = false;
+    
+    # 1.2 Specific variables
     private         $Instances                      = null;
     private         $DefaultBlueprints              = null;
     private         $CustomBlueprints               = null;
     
     # 2 Magic Methods
     # 2.1 __construct
-    final public function __construct($DefaultBlueprints, $DebugMode = false)#: void
+    final public function __construct($DefaultBlueprints)#: void
     {
-        if($DebugMode === true)
-        {
-            self::$DebugMode                        = true;
-        }
         
         $this->initBlueprints($DefaultBlueprints);
     }
@@ -94,7 +96,7 @@ class Blueprints extends \Config\Constants
     # 4.3 getBlueprintFile
     private function getBlueprintFile($Blueprint): ?string
     {
-        if(is_string($Blueprint) && in_array($Blueprint, $this->DefaultBlueprints))
+        if(is_string($Blueprint) && in_array($Blueprint, \Config\Defaults\Blueprints::$Defaults))
         {
             $BlueprintFile                              = $this->Constants('DirRoot');
             $BlueprintFile                              .= self::DIR_PHINE_ASSET_BLUEPRINTS;

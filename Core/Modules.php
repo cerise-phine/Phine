@@ -36,7 +36,7 @@ trait Modules
     # 3.1 getModule
     public function getModule($Module): ?object
     {
-        
+        return $this->Modules;
     }
     
     # 3.2 setModule

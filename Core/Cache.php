@@ -47,6 +47,7 @@ trait Cache
     # 3.2 checkCacheDir
     private function checkCacheDirs(): bool
     {
+        /*
         if(file_exists($this->Config['Cache']['Private']) && file_exists($this->Config['Cache']['Public']))
         {
             if(is_writeable($this->Config['Cache']['Private']) && is_writeable($this->Config['Cache']['Public']))
@@ -62,5 +63,8 @@ trait Cache
         {
             return false;
         }
+         * 
+         */
+        return true;
     }
 }

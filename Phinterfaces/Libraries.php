@@ -10,15 +10,17 @@ class Libraries extends \Config\Constants
     private         $Default                        = array
                     (
                         'CSS'                           => 'CSS\\CSS',
+                        'DB'                            => 'Database\\Database',
                         'HTML'                          => 'HTML\\HTML',
                         'JavaScript'                    => 'JavaScript\\JavaScript',
                         'Validations'                   => 'Validations\\Validations',
                         'CSV'                           => 'CSV',
-                        'Cache'                         => 'Cache',
-                        'DB'                            => 'Database',
                         'Directories'                   => 'Directories',
                         'EMail'                         => 'EMail',
-                        'Files'                         => 'Files'
+                        'Files'                         => 'Files',
+                        'JSON'                          => 'JSON',
+                        'Phar'                          => 'Phar',
+                        'Zip'                           => 'Zip'
                     );
     private         $Instances                      = array();
     private static  $DebugMode                      = false;

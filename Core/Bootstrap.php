@@ -127,11 +127,11 @@ trait Bootstrap
         
         
         # 3.2.1.x Admin GUI
-        #if($this->UserAccessLevel === self::ACCESS_LEVEL_ADMIN)
-        #{
+        if($this->UserAccessLevel === self::ACCESS_LEVEL_ADMIN)
+        {
             #$this->Blueprints->AdminGUI->setTabBase(4);
             #$Content                               .= $this->Blueprints->AdminGUI->createHTML;
-        #}
+        }
         
         # 3.2.1.x Debug GUI
         if(self::$DebugMode === true)
@@ -158,7 +158,7 @@ trait Bootstrap
             array('HEADERCSS',                      $this->Bootstrap['HeaderCSS']),
             array('HEADERJS',                       $this->Bootstrap['HeaderJavaScript']),
             array('HEADERJS',                       $this->Bootstrap['FooterJavaScript']),
-            array('CONTENT',                        $this->Bootstrap['Content'] . $this->HTML->Break)
+            array('CONTENT',                        $this->Bootstrap['Content'])
         );
         $this->Blueprints->Base->setPlaceholders($BaseHTML);
         

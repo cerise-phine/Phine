@@ -60,10 +60,13 @@ trait Sitemap
         if(is_null($this->Sitemap) || $Reload === true)
         {
             # 3.1.1 Init default sites
+            /*
             foreach($this->Config('Defaults')['Sites'] AS $SitePath => $Site)
             {
                 $this->Sitemap[]                    = $SitePath;
             }
+             * 
+             */
             
             # 3.1.2 Init flatfile sites
             

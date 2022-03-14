@@ -5,6 +5,7 @@ trait Phinterface
 {
     # 1 Constants and variables
     private         $Phinterface                    = null;
+    private         $PhinterfaceInstances           = null;
 
     # 2 Public Methods
     # 2.1 Phinterface
