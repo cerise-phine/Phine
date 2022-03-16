@@ -145,10 +145,6 @@ trait Bootstrap
         
         
         
-        
-        
-        
-        
         # 3.2.1.x Set base HTML
         $BaseHTML                                   = array
         (

@@ -3,7 +3,7 @@ namespace Config\Defaults;
 
 class Handlers extends \Config\ConfigParent
 {
-    public  static  $Defaults                       = array
+    public  static  $Phinterfaces                   = array
                     (
                         'Client'                        => array('Handlers', 'Client'),
                         'Cookies'                       => array('Handlers', 'Cookies', true),

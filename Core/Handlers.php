@@ -20,7 +20,7 @@ trait Handlers
                 );
                 
             case self::TRAIT_RETURN_PHINTERFACE:
-                $Phinterface                        = $this->DefaultHandlers;
+                $Phinterface                        = \Config\Defaults\Handlers::$Phinterfaces;
                 $Phinterface['Handlers']            = 'Handlers';
                 $Phinterface['DebugHandlers']       = array('Handlers', 'Debug');
                 
@@ -31,18 +31,18 @@ trait Handlers
                 
             # 2.1.2 Specific output
             default:
-                if(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers) && $Value !== false)
+                if(isset(\Config\Defaults\Handlers::$Phinterfaces[$Handler]) && is_object($this->Handlers) && $Value !== false)
                 {
                     $this->Handlers->$Handler = $Value;
                     return null;
                 }
-                elseif(isset($this->DefaultHandlers[$Handler]) && is_object($this->Handlers) && $Value === false)
+                elseif(isset(\Config\Defaults\Handlers::$Phinterfaces[$Handler]) && is_object($this->Handlers) && $Value === false)
                 {
                     return call_user_func_array(array($this->Handlers,'Handlers'), array($Handler));
                 }
                 else
                 {
-                    return $this->Handlers;
+                    return null;
                 }
         }
     }

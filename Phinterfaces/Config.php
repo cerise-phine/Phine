@@ -29,13 +29,8 @@ class Config extends \Config\Constants
     # 2.3 __debugInfo
     final public function __debugInfo(): ?array
     {
-        $Debug['DebugMode']                         = self::$DebugMode;
+        $Debug['Instances']                         = $this->Instances;
         
-        if(self::$DebugMode === true)
-        {
-            $Debug['Instances']                     = $this->Instances;
-        }
-
         return $Debug;
     }
     

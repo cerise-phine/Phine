@@ -51,6 +51,7 @@ class Constants
                                                         'Modules',
                                                         'Phine',
                                                         'Sites',
+                                                        'System',
                                                         'Template'
                                                     );
 
