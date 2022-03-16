@@ -3,6 +3,10 @@ namespace Config\Defaults;
 
 class Handlers extends \Config\ConfigParent
 {
+    # 1 Config variables
+    public          $ConfigClass                    = 'Handlers';
+    
+    # 2 Phinterfaces
     public  static  $Phinterfaces                   = array
                     (
                         'Client'                        => array('Handlers', 'Client'),

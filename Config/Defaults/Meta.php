@@ -3,6 +3,10 @@ namespace Config\Defaults;
 
 class Meta extends \Config\ConfigParent
 {
+    # 1 Config variables
+    public          $ConfigClass                    = 'Meta';
+    
+    # 2 Default meta tags
     public  static  $Defaults                        = array
                     (
                         'Charset'                       => array(

@@ -3,7 +3,7 @@ namespace Config\Defaults;
 
 class System extends \Config\ConfigParent
 {
-    # 1 Config Variables
+    # 1 Config variables
     public          $ConfigClass                    = 'System';
     
     # 2 Common system settings

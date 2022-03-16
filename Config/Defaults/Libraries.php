@@ -3,6 +3,10 @@ namespace Config\Defaults;
 
 class Libraries extends \Config\ConfigParent
 {
+    # 1 Config variables
+    public          $ConfigClass                    = 'Libraries';
+    
+    # 2 Phinterfaces
     public  static  $Phinterfaces                   = array
                     (
                         'CSS'                           => array('Libraries', 'CSS'),

@@ -3,6 +3,10 @@ namespace Config\Defaults;
 
 class Sites extends \Config\ConfigParent
 {
+    # 1 Config variables
+    public          $ConfigClass                    = 'Sites';
+    
+    # 2 Default sites
     public  static  $Defaults                       = array
                     (
                         'index'                         => array
